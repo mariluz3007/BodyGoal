@@ -5,9 +5,10 @@ function App() {
 
   return (
     <>
-      <div className="App">
       <h1>Tienda</h1>
-    </div>
+      <h2>Esta es mi tienda</h2>
+      <button>Click aqui</button>
+      <input type="text" placeholder="Escribe algo..." />
     </>
   )
 }
