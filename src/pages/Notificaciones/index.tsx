@@ -40,7 +40,7 @@ export default function NotificacionesPage() {
 
       <section className="notifications-list">
         {items.map((it) => (
-          <article key={it.id} className={`notification-item ${it.snoozed ? 'snoozed' : ''}`}>
+          <article key={it.id} className={`notification-item card ${it.snoozed ? 'snoozed' : ''}`}>
             <div className="notification-icon">{it.icon}</div>
             <div className="notification-body">
               <p className="notification-message">{it.message}</p>
