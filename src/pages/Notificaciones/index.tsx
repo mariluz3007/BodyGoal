@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React from 'react'
 
 type Notification = {
   id: number
@@ -8,29 +8,23 @@ type Notification = {
   snoozed?: boolean
 }
 
-const initialNotifications: Notification[] = [
+export const initialNotifications: Notification[] = [
   { id: 1, icon: '🔔', message: 'Hoy toca entrenar piernas.', meta: 'Hace 15 minutos' },
   { id: 2, icon: '💧', message: 'No olvides beber agua.', meta: 'Hace 1 hora' },
   { id: 3, icon: '🏆', message: 'Excelente trabajo. Has completado tu meta diaria.', meta: 'Hoy' },
+  { id: 4, icon: '🧘', message: 'Rutina de pierna completada ayer.', meta: 'Ayer' },
+  { id: 5, icon: '🥗', message: 'Receta saludable sugerida ayer.', meta: 'Ayer' },
+  { id: 6, icon: '🏃', message: 'Nuevo logro: 5 km corridos antes de ayer.', meta: 'Antes de ayer' },
+  { id: 7, icon: '🔔', message: 'Recordatorio: revisa tu plan semanal antes de ayer.', meta: 'Antes de ayer' },
 ]
 
-export default function NotificacionesPage() {
-  const [items, setItems] = useState<Notification[]>(initialNotifications)
+type Props = {
+  items: Notification[]
+  markAsRead: (id: number) => void
+  snooze: (id: number) => void
+}
 
-  function markAsRead(id: number) {
-    setItems((prev) => prev.filter((n) => n.id !== id))
-  }
-
-  function snooze(id: number) {
-    setItems((prev) => {
-      const rest = prev.filter((n) => n.id !== id)
-      const item = prev.find((n) => n.id === id)
-      if (!item) return prev
-      const snoozed = { ...item, snoozed: true, meta: 'Pospuesto' }
-      return [...rest, snoozed]
-    })
-  }
-
+export default function NotificacionesPage({ items, markAsRead, snooze }: Props) {
   return (
     <section className="page-panel">
       <div className="page-header">
@@ -47,8 +41,8 @@ export default function NotificacionesPage() {
               <p className="notification-meta">{it.meta}</p>
             </div>
             <div className="notification-actions">
-              <button className="btn btn-primary" onClick={() => markAsRead(it.id)}>✓ Marcar como leída</button>
-              <button className="btn btn-ghost" onClick={() => snooze(it.id)}>Posponer</button>
+              <button className="btn btn-read" onClick={() => markAsRead(it.id)}>✓ Marcar como leída</button>
+              <button className="btn btn-snooze" onClick={() => snooze(it.id)}>Posponer</button>
             </div>
           </article>
         ))}

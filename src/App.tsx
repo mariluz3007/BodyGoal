@@ -6,6 +6,7 @@ import ProgresoPage from './pages/Progreso'
 import NotificacionesPage from './pages/Notificaciones'
 import PerfilPage from './pages/Perfil'
 import ConfiguracionPage from './pages/Configuracion'
+import { initialNotifications } from './pages/Notificaciones'
 
 const pages = [
   { key: 'inicio', label: 'Inicio', icon: '🏠', Component: InicioPage },
@@ -19,6 +20,21 @@ const pages = [
 function App() {
   const [activePage, setActivePage] = useState('inicio')
   const ActiveComponent = pages.find((page) => page.key === activePage)?.Component ?? InicioPage
+  const [notifications, setNotifications] = useState(initialNotifications)
+
+  function handleMarkAsRead(id: number) {
+    setNotifications((prev) => prev.filter((n) => n.id !== id))
+  }
+
+  function handleSnooze(id: number) {
+    setNotifications((prev) => {
+      const rest = prev.filter((n) => n.id !== id)
+      const item = prev.find((n) => n.id === id)
+      if (!item) return prev
+      const snoozed = { ...item, snoozed: true, meta: 'Pospuesto' }
+      return [...rest, snoozed]
+    })
+  }
 
   return (
     <div className="app-shell">
@@ -33,7 +49,12 @@ function App() {
         </div>
 
         <div className="topbar-actions">
-          <button className="icon-button" aria-label="Notificaciones">🔔</button>
+          <button className="icon-button" aria-label="Notificaciones" onClick={() => setActivePage('notificaciones')}>
+            🔔
+            {notifications.length > 0 && (
+              <span className="badge">{notifications.length}</span>
+            )}
+          </button>
           <div className="profile-chip">👤 Usuario</div>
         </div>
       </header>
@@ -58,7 +79,11 @@ function App() {
         </aside>
 
         <main className="main-content">
-          <ActiveComponent />
+          {activePage === 'notificaciones' ? (
+            <NotificacionesPage items={notifications} markAsRead={handleMarkAsRead} snooze={handleSnooze} />
+          ) : (
+            <ActiveComponent />
+          )}
         </main>
       </div>
     </div>

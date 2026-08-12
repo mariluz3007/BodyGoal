@@ -235,12 +235,61 @@ button {
   gap: 20px;
 }
 
+.perfil-page .cards-grid {
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+}
+
+.perfil-page .card {
+  height: auto;
+  min-height: 220px;
+  width: 100%;
+  padding: 32px;
+}
+
+.perfil-page .profile-info {
+  max-height: 280px;
+  min-height: 140px;
+  padding: 20px;
+}
+
+.icon-button {
+  position: relative;
+}
+
+.icon-button .badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #ff3b30;
+  color: white;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
 .card {
+  height: 150px;
   padding: 26px;
   border-radius: 28px;
   background: var(--white);
   border: 1px solid rgba(0, 0, 0, 0.04);
   box-shadow: var(--shadow-card);
+}
+
+.card2 {
+  height: 120px;
+  padding: 26px;
+  border-radius: 28px;
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
 }
 
 .card h2 {
@@ -491,7 +540,6 @@ button {
   }
 }
 
-/* Notifications */
 .notifications-list {
   display: flex;
   flex-direction: column;
@@ -569,6 +617,17 @@ button {
   color: var(--text);
 }
 
+.btn-read {
+  background: #2d9cdb;
+  color: white;
+}
+
+.btn-snooze {
+  background: #f9f0ff;
+  color: #7f3fbf;
+  border: 1px solid #d8b4ff;
+}
+
 .notification-item.snoozed {
   opacity: 0.8;
   border-style: dashed;
@@ -599,7 +658,9 @@ button {
     padding: 22px;
   }
 
-  .card,
+  .card2 {
+    height: 150px;
+  },
   .hero-card {
     padding: 22px;
   }
