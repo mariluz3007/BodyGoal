@@ -1,3 +1,5 @@
+import './Inicio.css'
+
 export default function InicioPage() {
   return (
     <>

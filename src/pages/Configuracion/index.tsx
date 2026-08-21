@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './Configuracion.css'
 
 type Props = {
   notificationsEnabled: boolean

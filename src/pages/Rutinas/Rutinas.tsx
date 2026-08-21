@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './Rutinas.css'
 
 type Exercise = {
   name: string
@@ -83,7 +84,7 @@ export default function RutinasPage() {
 
   if (selectedRoutine) {
     return (
-      <section className="page-panel routine-detail-page">
+      <section className="page-panel rutinas-page routine-detail-page">
         <div className="routine-detail card">
           <button className="btn btn-ghost close-routine-button" type="button" onClick={closeRoutine}>Cerrar rutina</button>
           <div className={selectedRoutine.imageClass}>
@@ -124,7 +125,7 @@ export default function RutinasPage() {
   }
 
   return (
-    <section className="page-panel">
+    <section className="page-panel rutinas-page">
       <div className="page-header">
         <p className="eyebrow">Rutinas</p>
         <h1>Aquí estarán todos los entrenamientos</h1>

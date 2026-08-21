@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import LineChart from '../../components/charts/LineChart'
+import './Perfil.css'
 
 type Profile = {
   name: string

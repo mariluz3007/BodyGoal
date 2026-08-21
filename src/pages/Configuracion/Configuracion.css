@@ -1,0 +1,21 @@
+.settings-page { max-width: 900px; }
+.settings-intro { color: var(--text-muted); line-height: 1.7; }
+.settings-list { display: grid; gap: 12px; }
+.settings-row { display: flex; align-items: center; gap: 16px; min-height: 92px; padding: 18px 22px; border-radius: 22px; }
+.settings-copy { flex: 1; min-width: 0; }
+.settings-password-card { align-items: flex-start; }
+.password-form { display: grid; width: min(100%, 360px); gap: 8px; }
+.password-form input { width: 100%; padding: 10px 12px; border: 1px solid rgba(63, 183, 159, 0.2); border-radius: 12px; background: var(--white); color: var(--text); }
+.password-message { margin: 0; color: var(--mint-dark); font-size: 0.85rem; }
+.settings-time, .settings-select { width: 130px; min-width: 130px; padding: 11px 12px; border: 1px solid rgba(63, 183, 159, 0.2); border-radius: 12px; background: var(--white); color: var(--text); }
+.settings-footer { display: flex; align-items: center; gap: 16px; padding-top: 8px; }
+.logout-button { padding: 12px 18px; border: 1px solid rgba(214, 73, 73, 0.28); border-radius: 14px; background: rgba(255, 239, 239, 0.8); color: #b83b3b; font-weight: 700; cursor: pointer; }
+.settings-row .switch { flex: 0 0 auto; }
+.switch input { position: absolute; opacity: 0; pointer-events: none; }
+.switch-track { display: flex; align-items: center; width: 52px; height: 30px; padding: 3px; border-radius: 999px; background: #c9d5d9; cursor: pointer; transition: background-color .2s ease; }
+.switch-track span { width: 24px; height: 24px; border-radius: 50%; background: var(--white); box-shadow: 0 2px 6px rgba(38,50,56,.2); transition: transform .2s ease; }
+.switch input:checked + .switch-track { background: var(--mint-dark); }
+.switch input:checked + .switch-track span { transform: translateX(22px); }
+.switch input:focus-visible + .switch-track, .settings-time:focus-visible, .settings-select:focus-visible, .logout-button:focus-visible { outline: 3px solid rgba(125,198,255,.5); outline-offset: 3px; }
+.settings-row:hover { transform: translateY(-2px); box-shadow: 0 22px 50px rgba(41,61,81,.14) !important; }
+@media (max-width: 720px) { .settings-row { align-items: flex-start; flex-wrap: wrap; } .settings-copy { padding-top: 3px; } .settings-control-row .settings-time, .settings-control-row .settings-select { margin-left: 62px; width: calc(100% - 62px); } .settings-footer { align-items: flex-start; flex-direction: column; } }

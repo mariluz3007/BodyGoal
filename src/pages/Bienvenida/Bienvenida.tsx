@@ -1,3 +1,5 @@
+import './Bienvenida.css'
+
 type Props = {
   onLogin: () => void
   onRegister: () => void

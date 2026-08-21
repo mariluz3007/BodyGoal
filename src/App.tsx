@@ -1,14 +1,14 @@
 ﻿import { useEffect, useState, type ComponentType } from 'react'
 import './App.css'
-import InicioPage from './pages/Inicio'
-import RutinasPage from './pages/Rutinas'
-import ProgresoPage from './pages/Progreso'
-import NotificacionesPage from './pages/Notificaciones'
-import PerfilPage from './pages/Perfil'
-import ConfiguracionPage from './pages/Configuracion'
-import BienvenidaPage from './pages/Bienvenida'
-import { LoginPage, RegisterPage } from './pages/Autenticacion'
-import { initialNotifications } from './pages/Notificaciones'
+import InicioPage from './pages/Inicio/Inicio'
+import RutinasPage from './pages/Rutinas/Rutinas'
+import ProgresoPage from './pages/Progreso/Progreso'
+import NotificacionesPage from './pages/Notificaciones/Notificaciones'
+import PerfilPage from './pages/Perfil/Perfil'
+import ConfiguracionPage from './pages/Configuracion/Configuracion'
+import BienvenidaPage from './pages/Bienvenida/Bienvenida'
+import { LoginPage, RegisterPage } from './pages/Autenticacion/Autenticacion'
+import { initialNotifications } from './pages/Notificaciones/Notificaciones'
 
 const pages = [
   { key: 'inicio', label: 'Inicio', icon: '🏠', Component: InicioPage },

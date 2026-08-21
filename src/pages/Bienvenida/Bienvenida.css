@@ -1,0 +1,35 @@
+.welcome-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #ffffff;
+  color: #222222;
+  text-align: center;
+}
+
+.welcome-container {
+  width: min(100%, 440px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-title { margin: 0 0 8px; font-size: clamp(2.25rem, 8vw, 3rem); font-weight: 900; }
+.welcome-subtitle { width: 1.5rem; height: 2rem; margin: 0 auto 2px; line-height: 2rem; font-size: 1.5rem; font-weight: 800; }
+.welcome-logo { width: min(100%, 400px); display: flex; justify-content: center; align-items: center; }
+.welcome-logo img { display: block; width: 100%; height: auto; max-height: 220px; object-fit: contain; }
+.welcome-buttons { width: min(100%, 320px); display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.welcome-button, .google-button, .welcome-about button { font: inherit; cursor: pointer; }
+.welcome-button { width: 100%; padding: 13px 16px; border: 0; border-radius: 15px; background: #a2a0a0; color: #ffffff; font-size: 1rem; transition: background-color 0.2s ease, transform 0.2s ease; }
+.welcome-button:hover { background: #017c35; transform: translateY(-1px); }
+.welcome-button-dark { background: #444444; }
+.welcome-button-dark:hover { background: #686868; }
+.welcome-divider { margin: 0 0 16px; color: #999999; font-size: 0.9rem; }
+.google-button { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 19px; border: 1px solid #dddddd; border-radius: 8px; background: #ffffff; color: #222222; font-weight: 500; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); transition: background-color 0.2s ease; }
+.google-button:hover { background: #f5f5f5; }
+.google-icon { width: 20px; height: 20px; }
+.welcome-about { margin: 32px 0 0; color: #666666; font-size: 0.85rem; }
+.welcome-about button { padding: 0; border: 0; background: transparent; color: #828282; font-weight: 700; }
+.welcome-about button:hover { color: #353535; }

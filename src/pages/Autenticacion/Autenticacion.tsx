@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './Autenticacion.css'
 
 type LoginProps = {
   onSubmit: (pin: string) => boolean

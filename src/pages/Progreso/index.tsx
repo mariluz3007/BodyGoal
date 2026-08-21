@@ -1,4 +1,5 @@
 import LineChart from '../../components/charts/LineChart'
+import './Progreso.css'
 
 export default function ProgresoPage() {
   const labels = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun']

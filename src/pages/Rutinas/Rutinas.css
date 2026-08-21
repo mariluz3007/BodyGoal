@@ -1,0 +1,31 @@
+.rutinas-page .search-panel { max-width: 520px; }
+.rutinas-page .search-panel { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.rutinas-page .search-label { font-size: .9rem; color: var(--text-muted); font-weight: 700; }
+.rutinas-page .search-input { width: 100%; padding: 16px 18px; border-radius: 18px; border: 1px solid rgba(63,183,159,.18); background: var(--white); box-shadow: var(--shadow-card); font-size: 1rem; color: var(--text); }
+.rutinas-page .routine-group { display: flex; flex-direction: column; gap: 18px; margin-bottom: 32px; }
+.rutinas-page .routine-group h2 { margin: 0; font-size: 1.25rem; }
+.rutinas-page .routine-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 18px; }
+.rutinas-page .routine-card { background: var(--white); border: 1px solid rgba(0,0,0,.04); border-radius: 28px; padding: 22px; display: grid; gap: 14px; box-shadow: var(--shadow-card); transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease; }
+.rutinas-page .routine-card:hover { transform: translateY(-6px); box-shadow: 0 28px 75px rgba(41,61,81,.16); border-color: rgba(63,183,159,.28); }
+.rutinas-page .routine-image { width: 100%; aspect-ratio: 4 / 3; border-radius: 24px; display: grid; place-items: center; font-size: 2.2rem; background: linear-gradient(135deg,rgba(125,198,255,.16),rgba(184,244,227,.22)); animation: routine-float 4s ease-in-out infinite; }
+.rutinas-page .routine-image img { display: block; max-width: 100%; border-radius: 15px; width: 400px; height: 300px; }
+.rutinas-page .routine-image2 img { display: block; max-width: 100%; border-radius: 15px; width: 600px; height: 300px; }
+@keyframes routine-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+.rutinas-page .routine-card h3 { margin: 0; font-size: 1.1rem; }
+.rutinas-page .routine-card p { margin: 0; color: var(--text-muted); line-height: 1.7; }
+.rutinas-page .routine-button { margin-top: 10px; padding: 14px 18px; border: none; border-radius: 18px; background: linear-gradient(135deg,var(--mint-dark),var(--blue)); color: var(--white); font-weight: 700; cursor: pointer; transition: transform .22s ease, opacity .22s ease; }
+.rutinas-page .routine-button:hover { transform: translateY(-2px); opacity: .95; }
+.rutinas-page .routine-detail-page { max-width: 900px; }
+.rutinas-page .routine-detail { position: relative; display: grid; gap: 22px; padding: 30px; height: auto; min-height: 0; }
+.rutinas-page .routine-detail > .routine-image, .rutinas-page .routine-detail > .routine-image2 { max-width: 520px; width: 100%; }
+.rutinas-page .close-routine-button { justify-self: end; }
+.rutinas-page .routine-detail-heading h1 { margin: 0; font-size: clamp(2rem, 4vw, 3rem); }
+.rutinas-page .routine-detail-meta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; color: var(--text-muted); font-weight: 600; }
+.rutinas-page .exercise-section h2 { margin: 0 0 12px; font-size: 1.25rem; }
+.rutinas-page .exercise-list { display: grid; gap: 10px; margin: 0; padding-left: 28px; }
+.rutinas-page .exercise-list li { padding: 12px 14px; border-radius: 14px; background: rgba(185, 244, 227, 0.2); }
+.rutinas-page .exercise-list strong, .rutinas-page .exercise-list span { display: block; }
+.rutinas-page .exercise-list span { margin-top: 4px; color: var(--text-muted); }
+.rutinas-page .routine-video-section { display: grid; gap: 12px; }
+.rutinas-page .routine-video-wrapper { width: 100%; overflow: hidden; border-radius: 20px; background: #10191d; aspect-ratio: 16 / 9; }
+.rutinas-page .routine-video-wrapper iframe { display: block; width: 100%; height: 100%; border: 0; }

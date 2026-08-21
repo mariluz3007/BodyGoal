@@ -1,3 +1,5 @@
+import './Notificaciones.css'
+
 type Notification = {
   id: number
   icon: string
