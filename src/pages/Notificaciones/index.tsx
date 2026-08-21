@@ -1,5 +1,3 @@
-import React from 'react'
-
 type Notification = {
   id: number
   icon: string
@@ -10,21 +8,22 @@ type Notification = {
 
 export const initialNotifications: Notification[] = [
   { id: 1, icon: '🔔', message: 'Hoy toca entrenar piernas.', meta: 'Hace 15 minutos' },
-  { id: 2, icon: '💧', message: 'No olvides beber agua.', meta: 'Hace 1 hora' },
-  { id: 3, icon: '🏆', message: 'Excelente trabajo. Has completado tu meta diaria.', meta: 'Hoy' },
-  { id: 4, icon: '🧘', message: 'Rutina de pierna completada ayer.', meta: 'Ayer' },
-  { id: 5, icon: '🥗', message: 'Receta saludable sugerida ayer.', meta: 'Ayer' },
-  { id: 6, icon: '🏃', message: 'Nuevo logro: 5 km corridos antes de ayer.', meta: 'Antes de ayer' },
+  { id: 2, icon: '🔔', message: 'No olvides beber agua.', meta: 'Hace 1 hora' },
+  { id: 3, icon: '🔔', message: 'Excelente trabajo. Has completado tu meta diaria.', meta: 'Hoy' },
+  { id: 4, icon: '🔔', message: 'Rutina de pierna completada ayer.', meta: 'Ayer' },
+  { id: 5, icon: '🔔', message: 'Receta saludable sugerida ayer.', meta: 'Ayer' },
+  { id: 6, icon: '🔔', message: 'Nuevo logro: 5 km corridos antes de ayer.', meta: 'Antes de ayer' },
   { id: 7, icon: '🔔', message: 'Recordatorio: revisa tu plan semanal antes de ayer.', meta: 'Antes de ayer' },
 ]
 
 type Props = {
   items: Notification[]
+  enabled: boolean
   markAsRead: (id: number) => void
   snooze: (id: number) => void
 }
 
-export default function NotificacionesPage({ items, markAsRead, snooze }: Props) {
+export default function NotificacionesPage({ items, enabled, markAsRead, snooze }: Props) {
   return (
     <section className="page-panel">
       <div className="page-header">
@@ -32,7 +31,11 @@ export default function NotificacionesPage({ items, markAsRead, snooze }: Props)
         <h1>Lo último para ti</h1>
       </div>
 
-      <section className="notifications-list">
+      {!enabled ? (
+        <div className="notification-empty card">
+          <p>Las notificaciones están desactivadas.</p>
+        </div>
+      ) : <section className="notifications-list">
         {items.map((it) => (
           <article key={it.id} className={`notification-item card ${it.snoozed ? 'snoozed' : ''}`}>
             <div className="notification-icon">{it.icon}</div>
@@ -51,7 +54,7 @@ export default function NotificacionesPage({ items, markAsRead, snooze }: Props)
             <p>No hay notificaciones nuevas.</p>
           </div>
         )}
-      </section>
+      </section>}
     </section>
   )
 }

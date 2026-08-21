@@ -10,12 +10,21 @@ type Profile = {
 }
 
 export default function PerfilPage() {
-  const [profile, setProfile] = useState<Profile>({
-    name: 'Mariluz Cruz Diaz',
-    weight: '64 kg',
-    height: '1.70 cm',
-    age: '18 años',
-    goal: 'Tonificar',
+  const [profile, setProfile] = useState<Profile>(() => {
+    const defaultProfile: Profile = {
+      name: 'Mariluz Cruz Diaz',
+      weight: '64 kg',
+      height: '1.70 cm',
+      age: '18 años',
+      goal: 'Tonificar',
+    }
+    const savedProfile = localStorage.getItem('bodygoal-profile')
+    if (!savedProfile) return defaultProfile
+    try {
+      return { ...defaultProfile, ...JSON.parse(savedProfile) as Partial<Profile> }
+    } catch {
+      return defaultProfile
+    }
   })
 
   const [editMode, setEditMode] = useState(false)
