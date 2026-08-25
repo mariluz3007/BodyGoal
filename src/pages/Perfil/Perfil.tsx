@@ -22,7 +22,7 @@ export default function PerfilPage() {
     const savedProfile = localStorage.getItem('bodygoal-profile')
     if (!savedProfile) return defaultProfile
     try {
-      return { ...defaultProfile, ...JSON.parse(savedProfile) as Partial<Profile> }
+      return { ...defaultProfile, ...JSON.parse(savedProfile) as Partial<Profile>, age: '18 años' }
     } catch {
       return defaultProfile
     }

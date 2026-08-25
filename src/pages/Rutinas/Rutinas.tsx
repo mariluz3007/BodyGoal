@@ -20,7 +20,7 @@ type Routine = {
 
 const routines: Routine[] = [
   {
-    category: 'Bajar peso', title: 'Cardio', duration: '30 min', level: 'Intermedio', image: '/cardio.jpg', imageClass: 'routine-image', keywords: 'cardio bajar de peso', video: 'https://www.youtube.com/embed/UzLXOp8ZMRw',
+    category: 'Bajar peso', title: 'Cardio', duration: '30 min', level: 'Intermedio', image: '/cardio.jpg', imageClass: 'routine-image', keywords: 'cardio bajar de peso', video: 'https://www.youtube.com/embed/jIKUw5avFpU',
     exercises: [{ name: 'Carrera en el sitio', prescription: '3 series de 2 minutos' }, { name: 'Jumping jacks', prescription: '3 series de 30 segundos' }, { name: 'Burpees', prescription: '3 series de 10 repeticiones' }, { name: 'Mountain climbers', prescription: '3 series de 20 repeticiones' }],
   },
   {
